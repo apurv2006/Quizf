@@ -7,18 +7,6 @@ const jwt = require('jsonwebtoken')
 const app = express()
 app.use(cors())
 app.use(bodyParser.json())
-// add after: app.use(bodyParser.json())
-app.use((req, res, next) => {
-  // For production, replace '*' with your frontend origin:
-  // 'https://victorious-sand-035a70a0f.3.azurestaticapps.net'
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-  if (req.method === 'OPTIONS') {
-    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
-    return res.sendStatus(200);
-  }
-  next();
-});
 
 require('dotenv').config();
 
