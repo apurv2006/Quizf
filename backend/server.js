@@ -7,6 +7,8 @@ const jwt = require('jsonwebtoken')
 const app = express()
 app.use(cors())
 app.use(bodyParser.json())
+require('dotenv').config();
+
 
 // Config
 const MONGO_URI = process.env.MONGODB_URI
