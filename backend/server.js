@@ -103,6 +103,14 @@ app.get('/api/stats/:quizId', authMiddleware, async (req,res)=>{
   const perQuestionPercent = perQuestion.map(p=> ({ correctPercent: total? Math.round((p.correct/total)*100) : 0 }))
   res.json({ quizTitle: quiz.title, totalSubmissions: total, avgScore, perQuestion: perQuestionPercent, leaderboard })
 })
+// ... your existing routes ...
 
-const port = process.env.PORT || 4000
-app.listen(port, ()=> console.log('Server running on',port))
+// Root route to handle /
+app.get('/', (req, res) => {
+  res.send('Backend is running successfully 🚀');
+});
+
+// Start server
+const port = process.env.PORT || 4000;
+app.listen(port, () => console.log('Server running on', port));
+
