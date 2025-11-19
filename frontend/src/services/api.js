@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const baseURL = import.meta.env.VITE_API_URL 
-  || 'https://quizzed-fpepgvdgfnd7bcbd.canadacentral-01.azurewebsites.net';
+  || 'https://quizzed-fpepgvdgfnd7bcbd.canadacentral-01.azurewebsites.net/api';
 
 const API = axios.create({ baseURL });
 
