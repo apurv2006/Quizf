@@ -40,8 +40,9 @@ jobs:
       - name: Build frontend locally
         working-directory: ./frontend
         run: |
-          npm ci
-          npm run build
+          VITE_API_URL="https://quizzed-fpepgvdgfnd7bcbd.canadacentral-01.azurewebsites.net/api" npm ci
+          VITE_API_URL="https://quizzed-fpepgvdgfnd7bcbd.canadacentral-01.azurewebsites.net/api" npm run build
+
 
       - name: Build And Deploy (upload built files)
         id: builddeploy
