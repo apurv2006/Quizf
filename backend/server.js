@@ -5,7 +5,11 @@ const bodyParser = require('body-parser')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const app = express()
-app.use(cors())
+app.use(cors({
+    origin: "https://victorious-sand-035a70a0f.3.azurestaticapps.net",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+}));
 app.use(bodyParser.json())
 
 require('dotenv').config();
